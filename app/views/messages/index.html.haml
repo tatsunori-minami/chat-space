@@ -1,0 +1,53 @@
+
+!!!
+%html
+  %body
+    .notification
+    .wrapper
+      .side-bar
+        .header
+          %h3.header__name
+            User-name1
+          %ul.header__lists
+            %li.list
+              %a.fa.fa-pencil-square-o.icon{:href => "/groups/new"}
+            %li.list
+              %a.fa.fa-cog.icon{:href => "/user/3822/dit"}
+        .groups
+          .group
+            %a
+              .group__name
+                Group-name1
+              .group__message
+                text text text text text
+      .chat
+        .header
+          .left-header
+            .left-header__title
+              SEM
+            %ul.left-header__members
+              Members :
+              %li.member
+                \: minami
+          .right-header
+            %a.right-header__button Edit
+        .messages.js-messages
+          .message
+            .upper-message
+              .upper-message__user-name
+                MINAMI
+              .upper-message__date
+                2018/02/13
+            .lower-message
+              .lower-message__content
+                hule
+        .form
+          %form#new_message.js-form{"accept-charset" => "UTF-8", :action => "/groups/9722/messages", :enctype => "multipart/form-data", :method => "post"}
+            %input{:name => "utf8", :type => "hidden", :value => "√"}/
+            %input{:name => "authenticity_token", :type => "hidden", :value => "pb9miSmJr/Dq60YssSpha87RPwrrWTQ3u+oGTj7KfsHZ9B64GBMGDN06SBkEz+McVGI8iAv/4X+IyX4XIUpqZA=="}/
+            %input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+            .form__mask
+              %label.form__mask__image{:for => "message_image"}
+                %i.fa.fa-picture-o.icon
+                %input#message_image.hidden.js-file{:name => "message[image]", :type => "file"}/
+            %input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/

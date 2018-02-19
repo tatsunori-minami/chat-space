@@ -44,7 +44,7 @@
               .lower-message__content
                 hule
         .form
-          %form#new_message.js-form{"accept-charset" => "UTF-8", action: "/groups/9722/messages", enctype: "multipart/form-data", method: "post"}
+          %form#new_message.js-form{"accept-charset": "UTF-8", action: "/groups/9722/messages", enctype: "multipart/form-data", method: "post"}
             %input{name: "utf8", type: "hidden", value: "√"}/
             %input{name: "authenticity_token", type: "hidden", value: "pb9miSmJr/Dq60YssSpha87RPwrrWTQ3u+oGTj7KfsHZ9B64GBMGDN06SBkEz+McVGI8iAv/4X+IyX4XIUpqZA=="}/
             %input#message_content.form__message.js-content{name: "message[content]", placeholder: "type a message", type: "text"}/

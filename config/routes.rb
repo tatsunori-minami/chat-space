@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
     root 'messages#index'
 
-  get "messages" => "messages#index"
   get "groups/new" => "messages#new"
   get "users/id/edit" => "messages#edit"
 

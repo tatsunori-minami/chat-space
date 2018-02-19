@@ -10,9 +10,11 @@
             User-name1
           %ul.header__lists
             %li.list
-              %a.fa.fa-pencil-square-o.icon{:href => "/groups/new"}
+              = link_to groups_new_path do
+                %i.fa.fa-pencil-square-o.icon
             %li.list
-              %a.fa.fa-cog.icon{:href => "/user/3822/dit"}
+              = link_to users_id_edit_path do
+                %i.fa.fa-cog.icon
         .groups
           .group
             %a

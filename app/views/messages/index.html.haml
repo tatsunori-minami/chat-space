@@ -34,15 +34,7 @@
           .right-header
             %a.right-header__button Edit
         .messages.js-messages
-          .message
-            .upper-message
-              .upper-message__user-name
-                MINAMI
-              .upper-message__date
-                2018/02/13
-            .lower-message
-              .lower-message__content
-                hule
+          = render partial: "messages"
         .form
           %form#new_message.js-form{"accept-charset": "UTF-8", action: "/groups/9722/messages", enctype: "multipart/form-data", method: "post"}
             %input{name: "utf8", type: "hidden", value: "√"}/

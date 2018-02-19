@@ -17,11 +17,7 @@
                 %i.fa.fa-cog.icon
         .groups
           .group
-            %a
-              .group__name
-                Group-name1
-              .group__message
-                text text text text text
+            = render partial: "group"
       .chat
         .header
           .left-header
@@ -32,7 +28,7 @@
               %li.member
                 \: minami
           .right-header
-            %a.right-header__button Edit
+            = link_to "Edit", "path", class: "right-header__button"
         .messages.js-messages
           = render partial: "messages"
         .form

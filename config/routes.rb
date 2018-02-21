@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   root 'messages#index'
   get "messages" => "messages#index"
-  resource :user, only: [:edit, :update, :destroy]
+  resource :user, only: [:edit, :update]
 
 end

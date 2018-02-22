@@ -3,25 +3,7 @@
   %body
     .notification
     .wrapper
-      .side-bar
-        .header
-          %h3.header__name
-            = current_user.name
-          %ul.header__lists
-            %li.list
-              = link_to new_group_path do
-                %i.fa.fa-pencil-square-o.icon
-            %li.list
-              = link_to edit_user_path(current_user) do
-                %i.fa.fa-cog.icon
-        .groups
-          .group
-            - current_user.groups.each do |group|
-              = link_to group_messages_path(group) do
-                .group__name
-                  = group.name
-                .group__message
-                  メッセージはまだありません。
+    = render partical: "groups/index"
       .chat
         .header
           .left-header

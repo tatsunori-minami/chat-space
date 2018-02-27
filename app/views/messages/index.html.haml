@@ -1,14 +1,26 @@
 !!!
 %html
   %body
-    .notification
-        .messages.js-messages
-          = render partial: "messages"
-        .form
+  .wrapper
+    = render 'shared/side_bar'
+    .chat
+      .header
+        .left-header
+          .left-header__title
+            = @group.name
+          %ul.left-header__members
+            Members ::
+            %li.member
+            = @group_users
+        .right-header
+          = link_to "Edit", "edit_group_path", class: "right-header__button"
+      .messages.js-messages
+        = render partial: 'message', collection: @messages
+      .form
         = form_for [@group, @message] do |f|
           = f.text_field :content, class: "form_message", placeholder: "type a message"
-            .form__mask
-              = f.label :image, "form__mask__image" do
-                = fa_icon "picture-o", class: "icon"
-                  = f.file_field :image, class: "hidden"
-                = f.submit "Send", class: "form__submit"
+          .form__mask
+            = f.label :image, "form__mask__image" do
+              %i.fa.fa-picture-o.icon
+              = f.file_field :image, class: "hidden"
+          = f.submit "Send", class: "form__submit"
